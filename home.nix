@@ -15,6 +15,11 @@
         init = {
           defaultBranch = "main";
         };
+        url = {
+          "ssh://git@github.com/" = [
+            "https://github.com"
+          ];
+        };
       };
     };
 

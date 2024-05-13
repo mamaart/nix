@@ -1,0 +1,4 @@
+{
+  hashedWifiPassword = "";
+  hashedUserPassword = "";
+}

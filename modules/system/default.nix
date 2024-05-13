@@ -28,7 +28,7 @@
       shell = pkgs.zsh;
       isNormalUser = true;
       extraGroups = [ "wheel" "martin" ];
-      initialPassword = let x = import ../../x.nix; in x.userPassword;
+      initialHashedPassword = let x = import ../../x.nix; in x.hashedUserPassword;
     };
   };
 
