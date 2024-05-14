@@ -24,11 +24,12 @@
 
   users = {
     defaultUserShell = pkgs.zsh;
+    mutableUsers = false;
     users.martin = {
       shell = pkgs.zsh;
       isNormalUser = true;
       extraGroups = [ "wheel" "martin" ];
-      initialHashedPassword = let x = import ../../x.nix; in x.hashedUserPassword;
+      hashedPassword = let x = import ../../x.nix; in x.hashedUserPassword;
     };
   };
 
@@ -38,6 +39,7 @@
         directories = [
           "Documents"
           { directory = ".ssh"; mode = "0700"; }
+          "go"
 	];
       };
     };
@@ -68,6 +70,7 @@
       ffmpeg
       yt-dlp
       mkpasswd
+      gcc
 
       go
       golines
@@ -91,7 +94,11 @@
 
     ];
 
-    variables.EDITOR = "nvim";
+    variables = {
+      EDITOR = "nvim";
+      GOLANG_PROTOBUF_REGISTRATION_CONFLICT = "ignore";
+      CGO_ENABLED="1";
+    };
   };
 
 }
