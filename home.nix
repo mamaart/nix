@@ -16,9 +16,9 @@
           defaultBranch = "main";
         };
         url = {
-          "ssh://git@github.com/" = [
-            "https://github.com"
-          ];
+          "ssh://git@github.com/" = {
+            insteadOf = "https://github.com/";
+          };
         };
       };
     };
