@@ -22,6 +22,7 @@
         ./hosts/com2
         ./modules/system
         ./macchanger.nix
+        ./modules/ui
         home-manager.nixosModules.home-manager
         impermanence.nixosModules.impermanence
         {
