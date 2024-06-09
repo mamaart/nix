@@ -84,7 +84,7 @@
     plugins = {
       trouble = {
         enable = true;
-        autoOpen = true;
+        autoOpen = false;
         position = "right";
       };
 
