@@ -12,7 +12,10 @@
     hostName = "com";
     wireless = {
       enable = true;
-      networks."iPhone".pskRaw = let x = import ../../x.nix; in x.hashedWifiPassword;
+      networks = {
+        "iPhone".pskRaw = let x = import ../../x.nix; in x.hashedWifiPassword;
+        "Publikum" = {};
+      };
     };
   };
 

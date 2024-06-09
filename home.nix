@@ -23,6 +23,13 @@
       };
     };
 
+    go = {
+      enable = true;
+      goPrivate = [
+        "github.com/dk-slack"
+      ];
+    };
+
     zsh = {
       enable = true;
       enableCompletion = true;
@@ -56,17 +63,17 @@
         	clear
         fi
 
-        if [[ -z "$ZELLIJ" ]]; then
-            if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
-                zellij attach -c
-            else
-                zellij options --simplified-ui true --theme "dracula" --default-layout "default"
-            fi
-        
-            if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
-                exit
-            fi
-        fi
+        #if [[ -z "$ZELLIJ" ]]; then
+        #    if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
+        #        zellij attach -c
+        #    else
+        #        zellij options --simplified-ui true --theme "dracula" --default-layout "default"
+        #    fi
+        #
+        #    if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
+        #        exit
+        #    fi
+        #fi
 
       '';
 

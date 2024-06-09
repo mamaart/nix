@@ -92,6 +92,7 @@
       protoc-gen-go-grpc
       protobuf
 
+      plantuml
     ];
 
     variables = {
