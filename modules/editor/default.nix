@@ -141,7 +141,6 @@
         sources = [
           {name = "path";}
           {name = "nvim_lsp";}
-          {name = "cmp_tabnine";}
           {name = "luasnip";}
           {
             name = "buffer";
@@ -186,7 +185,6 @@
             luasnip = "[snip]";
             buffer = "[buffer]";
             neorg = "[neorg]";
-            cmp_tabnine = "[TabNine]";
           };
         };
       };
