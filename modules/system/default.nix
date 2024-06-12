@@ -76,6 +76,9 @@
       transmission_4-qt
       tor-browser
 
+      # Multimedia
+      mpv
+
       go
       golines
       gofumpt
