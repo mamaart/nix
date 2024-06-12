@@ -22,6 +22,8 @@
 
   programs.zsh.enable = true;
 
+  services.tor.enable = true;
+
   users = {
     defaultUserShell = pkgs.zsh;
     mutableUsers = false;
@@ -71,6 +73,8 @@
       yt-dlp
       mkpasswd
       gcc
+      transmission_4-qt
+      tor-browser
 
       go
       golines
@@ -87,6 +91,8 @@
       gotestsum
       mockgen
       govulncheck
+
+      nmap
 
       protoc-gen-go
       protoc-gen-go-grpc
