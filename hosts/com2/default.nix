@@ -15,6 +15,8 @@
       networks = {
         "iPhone".pskRaw = let x = import ../../x.nix; in x.hashedWifiPassword;
         "Publikum" = {};
+        "-Guest-UrbanRanger" = {};
+        "MOON".pskRaw = let x = import ../../x.nix; in x.hashedMoonPassword;
       };
     };
   };
