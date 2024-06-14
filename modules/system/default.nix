@@ -31,6 +31,7 @@
       shell = pkgs.zsh;
       isNormalUser = true;
       extraGroups = [ "wheel" "martin" ];
+      # Generate hashed password with mkpasswd
       hashedPassword = let x = import ../../x.nix; in x.hashedUserPassword;
     };
   };
