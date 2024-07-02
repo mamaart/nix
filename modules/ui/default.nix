@@ -26,8 +26,9 @@ in
       };
     };
 
-    libinput.enable = true;
   };
+
+  services.libinput.enable = true;
 
   programs.firefox.enable = true;
 

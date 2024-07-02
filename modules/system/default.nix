@@ -9,7 +9,7 @@
   time.timeZone = "Europe/Copenhagen";
 
   i18n.defaultLocale = "en_US.UTF-8";
-  services.xserver.xkbOptions = "caps:escape";
+  services.xserver.xkb.options = "caps:escape";
   console = {
     font = "Lat2-Terminus16";
     useXkbConfig = true; 
@@ -17,12 +17,15 @@
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;
+  hardware.bluetooth.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
   programs.zsh.enable = true;
 
   services.tor.enable = true;
+
+  services.blueman.enable = true;
 
   users = {
     defaultUserShell = pkgs.zsh;
@@ -76,9 +79,13 @@
       gcc
       transmission_4-qt
       tor-browser
+      inkscape
+      sxiv
+      kubectl
 
       # Multimedia
       mpv
+      evince
 
       go
       golines

@@ -61,7 +61,7 @@
       maplocalleader = " ";
     };
 
-    options = {
+    opts = {
       updatetime = 100;
 
       incsearch = true;
@@ -79,13 +79,15 @@
     colorschemes.dracula.enable = true;
 
 
-    options.completeopt = ["menu" "menuone" "noselect"];
+    opts.completeopt = ["menu" "menuone" "noselect"];
 
     plugins = {
       trouble = {
         enable = true;
-        autoOpen = false;
-        position = "right";
+        settings = {
+          auto_open = false;
+          position = "right";
+        };
       };
 
       telescope = {
@@ -101,11 +103,9 @@
       barbar = {
         enable = true;
         keymaps = {
-          silent = true;
-
-          next = "<TAB>";
-          previous = "<S-TAB>";
-          close = "<C-w>";
+          next.key = "<TAB>";
+          previous.key = "<S-TAB>";
+          close.key = "<C-w>";
         };
       };
 
@@ -120,35 +120,35 @@
       nvim-autopairs.enable = true;
       surround.enable = true;
 
-      nvim-cmp = {
-        enable = true;
-        snippet.expand = "luasnip";
-        mapping = {
-          "<C-d>" = "cmp.mapping.scroll_docs(-4)";
-          "<C-f>" = "cmp.mapping.scroll_docs(4)";
-          "<C-Space>" = "cmp.mapping.complete()";
-          "<C-e>" = "cmp.mapping.close()";
-          "<C-n>" = {
-            modes = ["i" "s"];
-            action = "cmp.mapping.select_next_item()";
-          };
-          "<C-p>" = {
-            modes = ["i" "s"];
-            action = "cmp.mapping.select_prev_item()";
-          };
-          "<CR>" = "cmp.mapping.confirm({ select = true })";
-        };
-        sources = [
-          {name = "path";}
-          {name = "nvim_lsp";}
-          {name = "luasnip";}
-          {
-            name = "buffer";
-            option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
-          }
-          {name = "neorg";}
-        ];
-      };
+      #nvim-cmp = {
+      #  enable = true;
+      #  snippet.expand = "luasnip";
+      #  mapping = {
+      #    "<C-d>" = "cmp.mapping.scroll_docs(-4)";
+      #    "<C-f>" = "cmp.mapping.scroll_docs(4)";
+      #    "<C-Space>" = "cmp.mapping.complete()";
+      #    "<C-e>" = "cmp.mapping.close()";
+      #    "<C-n>" = {
+      #      modes = ["i" "s"];
+      #      action = "cmp.mapping.select_next_item()";
+      #    };
+      #    "<C-p>" = {
+      #      modes = ["i" "s"];
+      #      action = "cmp.mapping.select_prev_item()";
+      #    };
+      #    "<CR>" = "cmp.mapping.confirm({ select = true })";
+      #  };
+      #  sources = [
+      #    {name = "path";}
+      #    {name = "nvim_lsp";}
+      #    {name = "luasnip";}
+      #    {
+      #      name = "buffer";
+      #      option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
+      #    }
+      #    {name = "neorg";}
+      #  ];
+      #};
 
       lsp = {
         enable = true;
@@ -171,7 +171,7 @@
           bashls.enable = true;
           jsonls.enable = true;
           gopls.enable = true;
-          nil_ls.enable = true;
+          nil-ls.enable = true;
         };
       };
       lspkind = {

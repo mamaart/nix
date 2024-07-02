@@ -2,7 +2,7 @@
   home = {
     username = "martin";
     homeDirectory = "/home/martin";
-    stateVersion = "23.11";
+    stateVersion = "24.05";
   };
 
   programs = {

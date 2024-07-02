@@ -14,13 +14,14 @@
       enable = true;
       networks = {
         "iPhone".pskRaw = let x = import ../../x.nix; in x.hashedWifiPassword;
-        "Publikum" = {};
+        "KK-Public" = {};
         "-Guest-UrbanRanger" = {};
         "MOON".pskRaw = let x = import ../../x.nix; in x.hashedMoonPassword;
+        "TP-Link_35F4".psk = "65731123";
       };
     };
   };
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 }
 
