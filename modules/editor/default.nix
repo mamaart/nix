@@ -82,6 +82,7 @@
     opts.completeopt = ["menu" "menuone" "noselect"];
 
     plugins = {
+      plantuml-syntax.enable = true;
       trouble = {
         enable = true;
         settings = {
@@ -119,36 +120,39 @@
       gitsigns.enable = true;
       nvim-autopairs.enable = true;
       surround.enable = true;
+      commentary.enable = true;
 
-      #nvim-cmp = {
-      #  enable = true;
-      #  snippet.expand = "luasnip";
-      #  mapping = {
-      #    "<C-d>" = "cmp.mapping.scroll_docs(-4)";
-      #    "<C-f>" = "cmp.mapping.scroll_docs(4)";
-      #    "<C-Space>" = "cmp.mapping.complete()";
-      #    "<C-e>" = "cmp.mapping.close()";
-      #    "<C-n>" = {
-      #      modes = ["i" "s"];
-      #      action = "cmp.mapping.select_next_item()";
-      #    };
-      #    "<C-p>" = {
-      #      modes = ["i" "s"];
-      #      action = "cmp.mapping.select_prev_item()";
-      #    };
-      #    "<CR>" = "cmp.mapping.confirm({ select = true })";
-      #  };
-      #  sources = [
-      #    {name = "path";}
-      #    {name = "nvim_lsp";}
-      #    {name = "luasnip";}
-      #    {
-      #      name = "buffer";
-      #      option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
-      #    }
-      #    {name = "neorg";}
-      #  ];
-      #};
+      cmp = {
+        enable = true;
+        settings = {
+          snippet.expand = "luasnip";
+          mapping = {
+            "<C-d>" = "cmp.mapping.scroll_docs(-4)";
+            "<C-f>" = "cmp.mapping.scroll_docs(4)";
+            "<C-Space>" = "cmp.mapping.complete()";
+            "<C-e>" = "cmp.mapping.close()";
+            "<C-n>" = "cmp.mapping.select_next_item()";
+            "<C-p>" = "cmp.mapping.select_prev_item()";
+            "<CR>" = "cmp.mapping.confirm({ select = true })";
+          };
+          sources = [
+            {name = "path";}
+            {name = "nvim_lsp";}
+            {name = "luasnip";}
+            {
+              name = "buffer";
+              option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
+            }
+            {name = "neorg";}
+          ];
+        };
+      };
+
+      cmp-nvim-lsp.enable = true;
+      cmp-buffer.enable = true;
+      cmp-path.enable = true;
+      cmp-cmdline.enable = true;
+      cmp_luasnip.enable = true;
 
       lsp = {
         enable = true;
@@ -205,5 +209,6 @@
         autocmd FileType go nnoremap <buffer> <leader>jj :w<CR>:GoAddTags<CR>
     augroup END
     '';
+
   };
 }
