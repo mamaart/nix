@@ -12,11 +12,13 @@
     hostName = "com";
     wireless = {
       enable = true;
+      #userControlled.enable = true;
       networks = {
-        "iPhone".pskRaw = let x = import ../../x.nix; in x.hashedWifiPassword;
+        "Ssid".pskRaw = let x = import ../../x.nix; in x.hashedWifiPassword;
         "KK-Public" = {};
+        "Publikum" = {};
         "-Guest-UrbanRanger" = {};
-        "MOON".pskRaw = let x = import ../../x.nix; in x.hashedMoonPassword;
+        "moon_5g".psk = "53312020";
         "TP-Link_35F4".psk = "65731123";
       };
     };
