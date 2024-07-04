@@ -22,6 +22,7 @@
   nixpkgs.config.allowUnfree = true;
 
   programs.zsh.enable = true;
+  programs.adb.enable = true;
 
   services.tor.enable = true;
 
@@ -33,7 +34,7 @@
     users.martin = {
       shell = pkgs.zsh;
       isNormalUser = true;
-      extraGroups = [ "wheel" "martin" ];
+      extraGroups = [ "wheel" "martin" "adbusers" ];
       # Generate hashed password with mkpasswd
       hashedPassword = let x = import ../../x.nix; in x.hashedUserPassword;
     };
