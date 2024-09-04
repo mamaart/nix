@@ -21,6 +21,7 @@
       modules = [
         ./hosts/com2
         ./modules/system
+        #./modules/vpn
         ./macchanger.nix
         ./modules/ui
         home-manager.nixosModules.home-manager
