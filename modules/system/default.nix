@@ -8,6 +8,8 @@
 
   time.timeZone = "Europe/Copenhagen";
 
+  virtualisation.docker.enable = true;
+
   i18n.defaultLocale = "en_US.UTF-8";
   services.xserver.xkb.options = "caps:escape";
   console = {
@@ -34,7 +36,7 @@
     users.martin = {
       shell = pkgs.zsh;
       isNormalUser = true;
-      extraGroups = [ "wheel" "martin" "adbusers" ];
+      extraGroups = [ "wheel" "martin" "adbusers" "docker" "kvm" ];
       # Generate hashed password with mkpasswd
       hashedPassword = let x = import ../../x.nix; in x.hashedUserPassword;
     };
@@ -47,6 +49,7 @@
           "Documents"
           { directory = ".ssh"; mode = "0700"; }
           "go"
+          { directory = ".kube"; mode = "0700"; }
 	];
       };
     };
@@ -74,7 +77,7 @@
       macchanger
       gh
       mplayer
-      ffmpeg
+      ffmpeg-full
       yt-dlp
       mkpasswd
       gcc
@@ -83,6 +86,16 @@
       inkscape
       sxiv
       kubectl
+      cmctl
+      kubernetes-helm
+      argocd
+      drone-cli
+
+      cargo
+
+      # Android development
+
+      android-studio
 
       # Multimedia
       mpv
@@ -111,6 +124,12 @@
       protobuf
 
       plantuml
+      iamb
+
+      tigervnc
+      python3
+
+      mitmproxy
     ];
 
     variables = {
