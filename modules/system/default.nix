@@ -1,5 +1,6 @@
 { pkgs, ...}:
 {
+
   nix.settings.experimental-features = [ "nix-command" "flakes"];
 
   fonts.packages = with pkgs; [ 
@@ -21,7 +22,10 @@
   hardware.pulseaudio.enable = true;
   hardware.bluetooth.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    android_sdk.accept_license = true;
+  };
 
   programs.zsh.enable = true;
   programs.adb.enable = true;
