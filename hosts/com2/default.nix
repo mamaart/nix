@@ -17,14 +17,14 @@ in
       enable = true;
       #userControlled.enable = true;
       networks = {
-        "KK-Public" = {};
-        "Publikum" = {};
-        "-Guest-UrbanRanger" = {};
-
         "Månss Wi-Fi-netværk".pskRaw = passwords.wifi.maans;
         "cloud".pskRaw = passwords.wifi.cloud;
         "moon_5g".pskRaw = passwords.wifi.moon_5g;
         "moon".pskRaw = passwords.wifi.moon;
+
+        "KK-Public" = {};
+        "Publikum" = {};
+        "-Guest-UrbanRanger" = {};
       };
     };
   };
