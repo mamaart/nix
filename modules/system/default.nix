@@ -49,6 +49,8 @@
           "Documents"
           { directory = ".ssh"; mode = "0700"; }
           "go"
+          ".android"
+          "Android"
           { directory = ".kube"; mode = "0700"; }
 	];
       };
