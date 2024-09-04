@@ -1,4 +1,7 @@
-{
+let
+  passwords = import ../../x.nix;
+in
+  {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -14,12 +17,14 @@
       enable = true;
       #userControlled.enable = true;
       networks = {
-        "Ssid".pskRaw = let x = import ../../x.nix; in x.hashedWifiPassword;
         "KK-Public" = {};
         "Publikum" = {};
         "-Guest-UrbanRanger" = {};
-        "moon_5g".psk = "53312020";
-        "TP-Link_35F4".psk = "65731123";
+
+        "Månss Wi-Fi-netværk".pskRaw = passwords.wifi.maans;
+        "cloud".pskRaw = passwords.wifi.cloud;
+        "moon_5g".pskRaw = passwords.wifi.moon_5g;
+        "moon".pskRaw = passwords.wifi.moon;
       };
     };
   };
