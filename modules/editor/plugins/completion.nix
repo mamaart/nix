@@ -5,6 +5,14 @@
   cmp-cmdline.enable = true;
   cmp_luasnip.enable = true;
 
+  luasnip = {
+    enable = true;
+    extraConfig = {
+      enable_autosnippets = true;
+      store_selection_keys = true;
+    };
+  };
+
   cmp = {
     enable = true;
     settings = {

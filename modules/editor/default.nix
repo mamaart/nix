@@ -2,7 +2,7 @@
 {
   programs.nixvim = {
     enable = true; 
-    plugins = import ./keymaps.nix;
+    plugins = import ./plugins.nix;
     keymaps = import ./keymaps.nix;
 
     extraPlugins = with pkgs.vimPlugins; [ 
@@ -47,6 +47,8 @@
         autocmd FileType go nnoremap <buffer> <CR>r :w<CR>:GoRun<CR>
 
         autocmd FileType go nnoremap <buffer> <leader>jj :w<CR>:GoAddTags<CR>
+
+        autocmd FileType plantuml nnoremap <buffer> <CR> :w<CR>:!plantuml %<CR>
     augroup END
     '';
 
