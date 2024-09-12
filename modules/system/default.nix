@@ -132,8 +132,12 @@
       plantuml
       iamb
 
+      sqlite
+      sqlitebrowser
       tigervnc
-      python3
+      (python3.withPackages (python-pkgs: [
+        python-pkgs.requests
+      ]))
 
       mitmproxy
     ];
