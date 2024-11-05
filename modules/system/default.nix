@@ -9,7 +9,12 @@
 
   time.timeZone = "Europe/Copenhagen";
 
-  virtualisation.docker.enable = true;
+  virtualisation = {
+    docker.enable = true;
+
+    libvirtd.enable = true;
+
+  };
 
   i18n.defaultLocale = "en_US.UTF-8";
   services.xserver.xkb.options = "caps:escape";
@@ -40,7 +45,7 @@
     users.martin = {
       shell = pkgs.zsh;
       isNormalUser = true;
-      extraGroups = [ "wheel" "martin" "adbusers" "docker" "kvm" ];
+      extraGroups = [ "wheel" "martin" "adbusers" "docker" "kvm" "libvirtd" ];
       # Generate hashed password with mkpasswd
       hashedPassword = let x = import ../../x.nix; in x.hashedUserPassword;
     };
@@ -54,6 +59,8 @@
           { directory = ".ssh"; mode = "0700"; }
           "go"
           ".android"
+          ".config/libvirt/qemu.conf"
+          ".mozilla/"
           "Android"
           { directory = ".kube"; mode = "0700"; }
 	];
@@ -133,13 +140,24 @@
       iamb
 
       sqlite
+      pgadmin4
       sqlitebrowser
       tigervnc
+
+      (opencv.override (old: { enableGtk2 = true; }))
       (python3.withPackages (python-pkgs: [
         python-pkgs.requests
+        python-pkgs.opencv4
+        python-pkgs.matplotlib
+        python-pkgs.beautifulsoup4
       ]))
+      pkg-config
 
       mitmproxy
+      element-desktop
+      toxic
+      openshot-qt
+      shotcut
     ];
 
     variables = {
