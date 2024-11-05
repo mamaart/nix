@@ -62,6 +62,11 @@
       html.enable = true;
       cssls.enable = true;
       clangd.enable = true;
+      rust-analyzer = {
+        enable = true;
+        installCargo = true;
+        installRustc = true;
+      };
     };
   };
 
